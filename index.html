@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alberto Watches</title>
+<meta name="description" content="Alberto Watches - Timeless by Tradition. Watches for men, women and unisex, with repair and appraisal services.">
+<link rel="icon" href="assets/logo/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-top">
+    <a href="#home" class="logo"><img src="assets/logo/logo-dark.png" alt="Alberto Watches - Timeless by Tradition"></a>
+    <div class="header-right">
+      <div class="visitors">Visitors <strong id="visitorCount">000001</strong></div>
+      <form class="search" id="searchForm" role="search">
+        <input type="search" id="searchInput" placeholder="Search watches" aria-label="Search watches">
+        <button type="submit">Search</button>
+      </form>
+      <button class="icon-btn" id="loginBtn">Sign in</button>
+      <button class="icon-btn" id="cartBtn">Cart <span class="badge" id="cartCount">0</span></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <ul>
+      <li><a href="#home" data-route="home">Home</a></li>
+      <li><a href="#men" data-route="men">Men</a></li>
+      <li><a href="#women" data-route="women">Women</a></li>
+      <li><a href="#unisex" data-route="unisex">Unisex</a></li>
+      <li class="has-sub">
+        <a href="#watches" data-route="watches" class="sub-link">Collections &#9662;</a>
+        <ul class="sub">
+          <li><a href="#watches" data-route="watches">All Watches</a></li>
+          <li><a href="#lineup-luxury" data-route="lineup-luxury">Luxury</a></li>
+          <li><a href="#lineup-vintage" data-route="lineup-vintage">Vintage</a></li>
+          <li><a href="#lineup-eco-drive" data-route="lineup-eco-drive">Eco-Drive</a></li>
+          <li><a href="#lineup-designer" data-route="lineup-designer">Designer</a></li>
+          <li><a href="#price-list" data-route="price-list">Price List</a></li>
+        </ul>
+      </li>
+      <li><a href="#technology" data-route="technology">Technology</a></li>
+      <li><a href="#gallery" data-route="gallery">Gallery</a></li>
+      <li><a href="#stores" data-route="stores">Store Locator</a></li>
+      <li><a href="#support" data-route="support">Support</a></li>
+      <li><a href="#about" data-route="about">About Us</a></li>
+      <li><a href="#contact" data-route="contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== PAGE CONTENT ===== -->
+<main id="app"></main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="assets/logo/logo-dark.png" alt="Alberto Watches" class="footer-logo">
+      <p>Full-service watch repair, appraisal and retail.</p>
+    </div>
+    <div>
+      <h4>Watches</h4>
+      <a href="#men">Men</a><a href="#women">Women</a><a href="#unisex">Unisex</a><a href="#price-list">Price List</a><a href="#gallery">Gallery</a>
+    </div>
+    <div>
+      <h4>Alberto</h4>
+      <a href="#about">About Us</a><a href="#stores">Store Locator</a><a href="#support">Support</a><a href="#contact">Contact Us</a><a href="#sitemap">Site Map</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>DHA, Karachi<br>Pakistan</p>
+      <p>Jamahi@gmail.com<br>+923007656609</p>
+    </div>
+  </div>
+  <p class="copy">&copy; <span id="year">2026</span> Alberto Watch Company. Sample catalogue for demonstration.</p>
+</footer>
+
+<!-- ===== SCROLLING TICKER ===== -->
+<div class="ticker" aria-label="Date, time and location"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<!-- ===== CART ===== -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart" id="cart" aria-label="Shopping cart">
+  <div class="cart-head"><h2>Your Cart</h2><button class="close" id="cartClose" aria-label="Close cart">&times;</button></div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-foot" id="cartFoot"></div>
+</aside>
+
+<!-- ===== PRODUCT POPUP ===== -->
+<dialog id="productDialog" class="dialog dialog-wide"></dialog>
+
+<!-- ===== LOGIN POPUP ===== -->
+<dialog id="loginDialog" class="dialog">
+  <button class="close" data-close aria-label="Close">&times;</button>
+  <h2 id="loginTitle">Sign in</h2>
+  <div class="tabs"><button class="tab on" data-mode="login">Sign in</button><button class="tab" data-mode="register">Create account</button></div>
+  <form id="loginForm" novalidate>
+    <label class="field" id="nameField" hidden>Full name<input id="loginName" autocomplete="name"></label>
+    <label class="field">Email<input id="loginEmail" type="email" autocomplete="email"></label>
+    <label class="field">Password<input id="loginPass" type="password" autocomplete="current-password"></label>
+    <p class="msg" id="loginMsg" role="alert"></p>
+    <button class="btn" type="submit" id="loginSubmit">Sign in</button>
+    <p class="small">Demo only: accounts are saved in this browser.</p>
+  </form>
+</dialog>
+
+<!-- ===== IMAGE VIEWER ===== -->
+<dialog id="lightbox" class="dialog lightbox">
+  <button class="close" data-close aria-label="Close">&times;</button>
+  <div class="plate"><img id="lbImg" alt=""></div>
+  <p id="lbCap"></p>
+  <div class="lb-nav"><button class="btn-outline" id="lbPrev">Previous</button><button class="btn-outline" id="lbNext">Next</button></div>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="data/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
